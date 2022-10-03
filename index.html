@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <title>Task Manager</title>
+    </head>
+    <body>
+        <header id="main-header">
+            <span name="app-name" class="main-header__text">
+                Custom Task Manager
+            </span>
+            <div name="main-header__right-block">
+                <div name="user-info">
+                    <img src="images/keanu.jpg" alt="User avatar"/>
+                    <span name="user-name" class="main-header__text">
+                        Keanu Reeves
+                    </span>
+                </div>
+                <label class="toggle-button">
+                    <input type="checkbox" />
+                    <div class="toggle-button__slider">
+                    </div>
+                </label>
+            </div>
+        </header>
+        <main>
+            <ol name="tasklists">
+                <li class="tasklist">
+                    <header class="tasklist__header">
+                        К выполнению
+                    </header>
+                    <section class="tasklist__main">
+                        <ul class="tasks">
+                            <li class="task">
+                                <p class="task__description">
+                                    Определиться с темой диплома
+                                </p>
+                                <div class="task__controls">
+                                    <div class="task__controls-row">
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="move-task-back"
+                                        >
+                                            <img 
+                                            src="assets/left-arrow.svg"
+                                            alt="move task bach button"
+                                            />
+                                        </button>
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="move-task-forward"
+                                        >
+                                            <img 
+                                                src="assets/right-arrow.svg"
+                                                alt="move task forward button"
+                                            />
+                                        </button>
+                                    </div>
+                                    <div class="task__controls-row">
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="edit-task"
+                                        >
+                                            <img 
+                                                src="assets/edit.svg"
+                                                alt="edit button"
+                                            />
+                                        </button>
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="delete-task"
+                                        >
+                                            <img 
+                                            src="assets/delete.svg"
+                                            alt="delete button"
+                                            />
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="task">
+                                <p class="task__description">
+                                    Определиться с темой диплома
+                                </p>
+                                <div class="task__controls">
+                                    <div class="task__controls-row">
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="move-task-back"
+                                        >
+                                            <img 
+                                            src="assets/left-arrow.svg"
+                                            alt="move task bach button"
+                                            />
+                                        </button>
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="move-task-forward"
+                                        >
+                                            <img 
+                                                src="assets/right-arrow.svg"
+                                                alt="move task forward button"
+                                            />
+                                        </button>
+                                    </div>
+                                    <div class="task__controls-row">
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="edit-task"
+                                        >
+                                            <img 
+                                                src="assets/edit.svg"
+                                                alt="edit button"
+                                            />
+                                        </button>
+                                        <button 
+                                            class="task__controls-btn"
+                                            name="delete-task"
+                                        >
+                                            <img 
+                                            src="assets/delete.svg"
+                                            alt="delete button"
+                                            />
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </section>
+                    <footer class="tasklist__footer">
+                        <button class="add-task-button">
+                            Добавить задачу
+                        </button>
+                    </footer>
+                </li>
+                <li class="tasklist">
+                    <header class="tasklist__header">
+                        <!--<button name="add-tasklist-button">
+                            Добавить список
+                        </button> -->
+                        <input
+                            type="text"
+                            placeholder="Новая задача"
+                            name="add-tasklist-input"
+                        />
+                    </header>
+                </li>
+            </ol>
+        </main>
+    </body>
+</html>

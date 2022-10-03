@@ -1,0 +1,251 @@
+:root {
+    /* color palette*/
+    --cp-light-blue: #7CBAF9;
+    --cp-light-light-blue: #cbdff4bf;
+    --cp-seawave: #7FACAC;
+    --cp-dark-blue: #020275;
+    --cp-white: #FFFFFF;
+    --cp-light-grey: #00000029;
+    --cp-blue: #93C4F5;
+    --cp-light-light-blue-op45: #cbdff4bf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', 'Tahoma';
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--cp-light-blue) 0%,  var(--cp-seawave) 100%);
+}
+
+#main-header {
+    width: 100%;
+    padding: 3vh 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header__text {
+    color: var(--cp-dark-blue);
+    font-size: 4vh;
+}
+
+div[name="main-header__right-block"] {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.toggle-button {
+    display: inline-block;
+    position: relative;
+    outline: none;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    width: 6vw;
+    height: 3vw;
+    transform: scale(0.7);
+}
+
+.toggle-button > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-button__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 1.5vw;
+    border: 1px solid var(--cp-white);
+    background-color: var(--cp-light-blue);
+    transition: .4s;
+}
+
+.toggle-button__slider::before {
+    width: calc(3vw - 6px);
+    height: calc(3vw - 6px);
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: .4s;
+    border-radius: 50%;
+    background-color: var(--cp-white);
+}
+
+input:checked + .toggle-button__slider::before {
+    transform: translateX(3vw);
+}
+
+div[name="user-info"] img {
+    border: 2px solid var(--cp-white);
+    width: 8vh;
+    height: 8vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+div[name="user-info"] {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+main {
+    width: 100%;
+    padding: 2vh 4vw;;   
+}
+
+ol[name="tasklists"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
+    align-items: flex-start;
+}
+
+.tasklist {
+    width: 20vw;
+    border-radius: 10px;
+    background-color: var( --cp-light-light-blue);
+    box-shadow: 2px 2px 4px var(--cp-light-grey);
+    padding: 2vh;
+}
+
+.tasklist__header {
+    font-weight: 600;
+    font-size: 3vh;
+    color: var(--cp-dark-blue);
+    margin-bottom: 1vh;
+}
+
+.tasklist__footer {
+    width: 100%;
+    padding: 0;
+}
+
+button {
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.add-task-button {
+    font-weight: inherit;
+    font-size: 3vh;
+}
+
+.add-task-button:hover {
+    font-weight: 600;
+}
+
+.task {
+    width: 100%;
+    padding: 1vh;
+    border: 2px solid var(--cp-blue);
+    background-color: var(--cp-blue);
+    box-shadow: 2px 2px 4px var(--cp-light-grey);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+    margin-bottom: 1vh;
+    transition: opacity .5s ease;
+}
+
+.task:hover {
+    border-color: var(--cp-dark-blue);
+    background-color: var(--cp-light-blue);
+}
+
+.task__controls-row {
+display: flex;
+gap: 1vh;
+}
+
+.task__controls-row:first-child {
+margin-bottom: 1vh;
+}
+
+.task__controls-btn {
+    opacity: 0.45;
+    transition: opacity .5s ease;
+}
+
+.task__controls-btn:hover {
+    opacity: 1;
+}
+
+.task__controls-btn img {
+    width: 4vh;
+    height: 4vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .task__controls-row:first-child {
+        margin-bottom: 0;
+    }
+    .task__controls {
+        display: flex;
+        gap: 1vh;
+    }
+
+    .task {
+        flex-direction: column;
+    }
+}
+
+.tasklist:last-child {
+    background-color: var(--cp-light-light-blue-op45);
+}
+
+.tasklist:last-child .task-list__header {
+    margin-bottom: 0;
+}
+
+button[name="add-tasklist-button"] {
+    font-size: 3vh;
+    font-weight: 400;
+}
+
+
+button[name="add-tasklist-button"]:hover {
+    font-weight: 600;
+}
+
+input[name="add-tasklist-input"] {
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 2.5vh;
+    outline: none;
+    border: 1px solid var(--cp-dark-blue);
+}
+
+input[name="add-tasklist-input"]:hover {
+    box-shadow: 0 0 4px var(--cp-light-grey);
+}
